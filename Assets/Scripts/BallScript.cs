@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class paddleScript : MonoBehaviour
+public class BallScript : MonoBehaviour
 {
-    public float speed;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = Random.Range(5f, 15f);
     }
 
     // Update is called once per frame
     void Update()
     {
-       transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, 0f);
-       Debug.Log(transform.position.x);
+        transform.position += new Vector3(0f, 0f, -1 * speed * Time.deltaTime);
     }
 }

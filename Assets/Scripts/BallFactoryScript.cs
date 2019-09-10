@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class paddleScript : MonoBehaviour
+public class BallFactoryScript : MonoBehaviour
 {
-    public float speed;
+    public GameObject ball;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Instantiate(ball, transform.position, transform.rotation);
+        //InvokeRepeating()
+    }
+
+    void SpawnBall()
+    {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, 0f);
-       Debug.Log(transform.position.x);
+        
     }
 }
